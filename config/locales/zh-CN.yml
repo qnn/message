@@ -1,4 +1,7 @@
 zh-CN:
+  unauthorized:
+    manage:
+      all: "你所在的用户组无权限执行此操作。"
   time:
     formats:
       default: "%Y-%m-%d %H:%M:%S"
