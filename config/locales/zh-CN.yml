@@ -1,0 +1,20 @@
+zh-CN:
+  messages:
+    name: 名字
+    title: 标题
+    content: 内容
+    show: 显示
+    edit: 编辑
+    delete: 删除
+    new: 留言
+    back: 返回
+  helpers:
+    label:
+      message:
+        name: 名字
+        title: 标题
+        content: 内容
+    submit:
+      message:
+        create: 创建留言
+        update: 保存更改

@@ -1,20 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b><%= t("messages.name") %>:</b>
   <%= @message.name %>
 </p>
 
 <p>
-  <b>Title:</b>
+  <b><%= t("messages.title") %>:</b>
   <%= @message.title %>
 </p>
 
 <p>
-  <b>Content:</b>
+  <b><%= t("messages.content") %>:</b>
   <%= @message.content %>
 </p>
 
 
-<%= link_to 'Edit', edit_message_path(@message) %> |
-<%= link_to 'Back', messages_path %>
+<%= link_to t("messages.edit"), edit_message_path(@message) %> |
+<%= link_to t("messages.back"), messages_path %>
