@@ -16,6 +16,24 @@ zh-CN:
     listing: 留言列表
     edit_msg: 编辑留言
     delete_confirm: 确认要删除这条留言吗？
+    required: 带 <span class="required">*</span> 号的项目为必填项。
+    error_saving: 保存留言时发生%d个错误
+  activerecord:
+    attributes:
+        message:
+          name: 名字
+          title: 标题
+          content: 内容
+    errors:
+      models:
+        message:
+          attributes:
+            name:
+              blank: 不能为空
+            title:
+              blank: 不能为空
+            content:
+              blank: 不能为空
   helpers:
     label:
       message:
