@@ -11,3 +11,35 @@
  *= require_self
  *= require_tree .
  */
+.nav_bar_container {
+height: 30px;
+}
+.nav_bar {
+float: right;
+height: 30px;
+margin: 0;
+list-style: none;
+}
+.nav_bar li {
+width: 90px;
+height: 25px;
+float: left;
+margin: 0 5px;
+}
+.nav_bar li a {
+width: 90px;
+height: 25px;
+text-align: center;
+line-height: 25px;
+display: block;
+background: #efefef;
+border-radius: 5px;
+color: #666;
+text-decoration: none;
+}
+.nav_bar li a:hover {
+color: #fff;
+background: #333;
+text-decoration: none;
+}
+

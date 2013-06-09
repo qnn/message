@@ -3,6 +3,7 @@ zh-CN:
     formats:
       default: "%Y-%m-%d %H:%M:%S"
   messages:
+    home: 首页
     name: 名字
     title: 标题
     content: 内容
@@ -50,3 +51,8 @@ zh-CN:
       message:
         create: 创建留言
         update: 保存更改
+  users:
+    register: 注册账号
+    edit: 更新资料
+    logout: 退出
+    login: 登录

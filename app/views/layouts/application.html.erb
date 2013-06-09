@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Contactus</title>
+  <title>留言系统</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<ul class="user">
-  <%= render 'devise/menu/registration_items' %>
-  <%= render 'devise/menu/login_items' %>
-</ul>
+<div class="nav_bar_container">
+  <ul class="nav_bar">
+    <li><a href="/"><%= t "messages.home" %></a></li>
+    <%= render 'devise/menu/registration_items' %>
+    <%= render 'devise/menu/login_items' %>
+  </ul>
+</div>
 
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
