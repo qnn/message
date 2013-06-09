@@ -9,6 +9,10 @@ zh-CN:
     delete: 删除
     new: 留言
     back: 返回
+    new_msg: 创建留言
+    listing: 留言列表
+    edit_msg: 编辑留言
+    delete_confirm: 确认要删除这条留言吗？
   helpers:
     label:
       message:

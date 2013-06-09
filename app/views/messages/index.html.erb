@@ -1,4 +1,4 @@
-<h1>Listing messages</h1>
+<h1><%= t("messages.listing") %></h1>
 
 <table>
   <tr>
@@ -19,7 +19,7 @@
     <td><%= message.created_at %></td>
     <td></td>
     <td><%= link_to t("messages.edit"), edit_message_path(message) %></td>
-    <td><%= link_to t("messages.delete"), message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t("messages.delete"), message, method: :delete, data: { confirm: t("messages.delete_confirm") } %></td>
   </tr>
 <% end %>
 </table>
