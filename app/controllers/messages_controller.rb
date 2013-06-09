@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :show]
+
   # GET /messages
   # GET /messages.json
   def index
