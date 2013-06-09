@@ -3,6 +3,7 @@ zh-CN:
     name: 名字
     title: 标题
     content: 内容
+    created_at: 创建时间
     show: 显示
     edit: 编辑
     delete: 删除

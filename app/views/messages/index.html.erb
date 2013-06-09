@@ -5,6 +5,7 @@
     <th><%= t("messages.name") %></th>
     <th><%= t("messages.title") %></th>
     <th><%= t("messages.content") %></th>
+    <th><%= t("messages.created_at") %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,8 +15,9 @@
   <tr>
     <td><%= message.name %></td>
     <td><%= message.title %></td>
-    <td><%= message.content %></td>
-    <td><%= link_to t("messages.show"), message %></td>
+    <td><%= truncate message.content, :length => 50 %> <%= link_to t("messages.show"), message %></td>
+    <td><%= message.created_at %></td>
+    <td></td>
     <td><%= link_to t("messages.edit"), edit_message_path(message) %></td>
     <td><%= link_to t("messages.delete"), message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
