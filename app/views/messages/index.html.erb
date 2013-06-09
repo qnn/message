@@ -1,25 +1,20 @@
 <h1><%= t("messages.listing") %></h1>
 
-<table>
-  <tr>
-    <th><%= t("messages.name") %></th>
-    <th><%= t("messages.title") %></th>
-    <th><%= t("messages.content") %></th>
-    <th><%= t("messages.created_at") %></th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<table class="msgs">
 <% @messages.each do |message| %>
   <tr>
-    <td><%= message.name %></td>
-    <td><%= message.title %></td>
-    <td><%= truncate message.content, :length => 50 %> <%= link_to t("messages.show"), message %></td>
-    <td><%= message.created_at %></td>
+    <td class="msgs_f"><%= t("messages.name") %></td><td><%= message.name %></td>
+    <td class="msgs_f"><%= t("messages.title") %></td><td><%= message.title %></td>
+    <td class="msgs_f"><%= t("messages.created_at") %></td><td><%= message.created_at %></td>
     <td></td>
-    <td><%= link_to t("messages.edit"), edit_message_path(message) %></td>
-    <td><%= link_to t("messages.delete"), message, method: :delete, data: { confirm: t("messages.delete_confirm") } %></td>
+  </tr>
+  <tr>
+    <td class="msgs_f"><%= t("messages.content") %></td>
+    <td colspan="6">
+      <%= truncate message.content, :length => 80 %> <%= link_to t("messages.show"), message %>
+      <%= link_to t("messages.edit"), edit_message_path(message) %>
+      <%= link_to t("messages.delete"), message, method: :delete, data: { confirm: t("messages.delete_confirm") } %>
+    </td>
   </tr>
 <% end %>
 </table>
