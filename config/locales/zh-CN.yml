@@ -7,6 +7,7 @@ zh-CN:
     title: 标题
     content: 内容
     created_at: 创建时间
+    show: 显示
     show_rest: 显示剩余内容
     edit: 编辑
     delete: 删除
@@ -18,6 +19,8 @@ zh-CN:
     delete_confirm: 确认要删除这条留言吗？
     required: 带 <span class="required">*</span> 号的项目为必填项。
     error_saving: 保存留言时发生%d个错误
+    created: 成功创建留言。
+    updated: 成功修改留言。
   activerecord:
     attributes:
         message:
