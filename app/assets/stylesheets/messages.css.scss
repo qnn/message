@@ -13,9 +13,20 @@ width: 70px;
 background: #efefef;
 text-align: center;
 font-weight: bold;
+white-space: nowrap;
 }
-.msgs_v {
-width: 150px;
+.msgs_n {
+width: 100px;
+}
+.msgs_d {
+width: 130px;
+font-size: 11px;
+}
+.msgs_t {
+width: 250px;
+}
+.msgs_a {
+white-space: nowrap;
 }
 .required {
 color: #ff0000
