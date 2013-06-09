@@ -33,10 +33,13 @@ zh-CN:
           attributes:
             name:
               blank: 不能为空
+              too_long: 太长，最长 %{count} 个字符。
             title:
               blank: 不能为空
+              too_long: 太长，最长 %{count} 个字符。
             content:
               blank: 不能为空
+              too_long: 太长，最长 %{count} 个字符。
   helpers:
     label:
       message:

@@ -3,8 +3,10 @@
 <table class="msgs">
 <% @messages.each do |message| %>
   <tr>
-    <td class="msgs_f"><%= t("messages.title") %></td><td class="msgs_v"><%= message.title %></td>
-    <td class="msgs_f"><%= t("messages.name") %></td><td class="msgs_v"><%= message.name %></td>
+    <td class="msgs_f"><%= t("messages.title") %></td>
+    <td class="msgs_v"><%= truncate message.title, :length => 30 %></td>
+    <td class="msgs_f"><%= t("messages.name") %></td>
+    <td class="msgs_v"><%= truncate message.name, :length => 30 %></td>
     <td class="msgs_f"><%= t("messages.created_at") %></td><td class="msgs_v"><%= l message.created_at, :format => :default %></td>
     <td></td>
   </tr>
