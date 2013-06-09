@@ -48,6 +48,8 @@ zh-CN:
         title: 标题
         content: 内容
       user:
+        username: 用户名
+        login: 用户名/电邮地址
         email: 电邮地址
         password: 密码
         password_confirmation: 重输密码
