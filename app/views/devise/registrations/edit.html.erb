@@ -18,6 +18,11 @@
   <div><%= f.label :current_password %> <%= t("users.for_confirm_usage") %><br />
   <%= f.password_field :current_password %></div>
 
+  <div><%= f.label :role %><br />
+  <%= f.radio_button :role, :admin %> <%= f.label :role_admin %><br />
+  <%= f.radio_button :role, :user %> <%= f.label :role_user %>
+  </div>
+
   <div><%= f.submit t("users.update") %></div>
 <% end %>
 

@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :authenticate_user!, :except => [:index, :new]
 
   # GET /messages
   # GET /messages.json
@@ -16,7 +16,7 @@ class MessagesController < ApplicationController
   # GET /messages/1.json
   def show
     @message = Message.find(params[:id])
-    authorize! :read, @article
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @message }

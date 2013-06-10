@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   include RoleModel
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :login, :username, :email, :password, :password_confirmation, :remember_me, :roles, :roles_mask
+  attr_accessible :login, :username, :email, :password, :password_confirmation, :remember_me, :role
   # attr_accessible :title, :body
   attr_accessor :login
   def self.find_for_database_authentication(warden_conditions)
@@ -20,9 +20,5 @@ class User < ActiveRecord::Base
       where(conditions).first
     end
   end
-
-  roles_attribute :roles_mask
-
-  roles :admin, :user
 
 end

@@ -58,6 +58,9 @@ zh-CN:
         password_confirmation: 重输密码
         current_password: 当前密码
         remember_me: 记住登录信息
+        role: 用户组
+        role_admin: 管理员
+        role_user: 普通用户
     submit:
       message:
         create: 创建留言
