@@ -17,13 +17,14 @@ zh-CN:
     delete: 删除
     new: 留言
     back: 返回
-    new_msg: 创建留言
+    new_msg: 新增留言
     listing: 留言列表
     edit_msg: 编辑留言
     delete_confirm: 确认要删除这条留言吗？
+    logout_confirm: 确认要退出吗？
     required: 带 <span class="required">*</span> 号的项目为必填项。
     error_saving: 保存留言时发生%d个错误
-    created: 成功创建留言。
+    created: 成功保存信息，感谢你的留言！
     updated: 成功修改留言。
     deleted: 成功删除留言。
   activerecord:
@@ -71,7 +72,7 @@ zh-CN:
         role_user: 普通用户
     submit:
       message:
-        create: 创建留言
+        create: 提交留言
         update: 保存更改
   users:
     register: 注册账号

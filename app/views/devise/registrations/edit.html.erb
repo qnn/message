@@ -24,9 +24,3 @@
 
   <div><%= f.submit t("users.update") %></div>
 <% end %>
-
-<h3><%= t "users.cancel" %></h3>
-
-<p><%= link_to t("users.cancel"), registration_path(resource_name), :confirm => t("users.cancel_confirm"), :method => :delete %></p>
-
-<%= link_to t("users.back"), :back %>

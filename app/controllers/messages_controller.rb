@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :new, :create]
+  before_filter :authenticate_user!, :except => [:new, :create]
 
   # GET /messages
   # GET /messages.json
@@ -47,7 +47,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        format.html { redirect_to messages_url, notice: t("messages.created") }
+        format.html { redirect_to new_message_url, notice: t("messages.created") }
         format.json { render json: @message, status: :created, location: @message }
       else
         format.html { render action: "new" }

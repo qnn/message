@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
   <li>
-  <%= link_to(t("users.logout"), destroy_user_session_path, :method => :delete) %>        
+  <%= link_to(t("users.logout"), destroy_user_session_path, :method => :delete, :confirm => t("messages.logout_confirm")) %>        
   </li>
 <% else %>
   <li>

@@ -1,8 +1,17 @@
 Contactus::Application.routes.draw do
-  devise_for :users
-
+  devise_for :users, skip: :registrations
+  devise_scope :user do # prevent users from canceling accounts
+    resource :registration,
+      only: [:new, :create, :edit, :update],
+      path: 'users',
+      path_names: { new: 'sign_up' },
+      controller: 'devise/registrations',
+      as: :user_registration do
+        get :cancel
+      end
+  end
   resources :messages
-  root :to => "messages#index"
+  root :to => "messages#new"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
