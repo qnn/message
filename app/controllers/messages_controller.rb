@@ -37,6 +37,7 @@ class MessagesController < ApplicationController
   # GET /messages/1/edit
   def edit
     @message = Message.find(params[:id])
+    authorize! :update, @message
   end
 
   # POST /messages
@@ -59,7 +60,7 @@ class MessagesController < ApplicationController
   # PUT /messages/1.json
   def update
     @message = Message.find(params[:id])
-
+    authorize! :update, @message
     respond_to do |format|
       if @message.update_attributes(params[:message])
         format.html { redirect_to @message, notice: t("messages.updated") }
@@ -75,6 +76,7 @@ class MessagesController < ApplicationController
   # DELETE /messages/1.json
   def destroy
     @message = Message.find(params[:id])
+    authorize! :destroy, @message
     @message.destroy
 
     respond_to do |format|

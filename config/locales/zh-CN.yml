@@ -31,8 +31,14 @@ zh-CN:
           name: 名字
           title: 标题
           content: 内容
+        user:
+          current_password: 当前密码
     errors:
       models:
+        user:
+          attributes:
+            current_password:
+              blank: 不能为空
         message:
           attributes:
             name:
