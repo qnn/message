@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  ROLES = %w(root admin user)
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -17,5 +19,10 @@ class User < ActiveRecord::Base
       where(conditions).first
     end
   end
+end
 
+class String
+  def real_role_name
+    I18n::t("helpers.label.user.role_%s" % self)
+  end
 end

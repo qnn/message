@@ -66,6 +66,7 @@ zh-CN:
         current_password: 当前密码
         remember_me: 记住登录信息
         role: 用户组
+        role_root: 终极管理员
         role_admin: 管理员
         role_user: 普通用户
     submit:
