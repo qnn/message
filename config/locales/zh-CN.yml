@@ -25,6 +25,7 @@ zh-CN:
     error_saving: 保存留言时发生%d个错误
     created: 成功创建留言。
     updated: 成功修改留言。
+    deleted: 成功删除留言。
   activerecord:
     attributes:
         message:

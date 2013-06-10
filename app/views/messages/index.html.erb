@@ -18,12 +18,14 @@
       <% end %>
     </td>
   </tr>
+  <% if can? :read, message %>
   <tr>
     <td class="msgs_f"><%= t("messages.content") %></td>
     <td colspan="6">
       <%= simple_format truncate(message.content, :length => 500, :separator => ' ') %>
     </td>
   </tr>
+  <% end %>
   <tr>
     <td class="msgs_s" colspan="7"></td>
   </tr>
