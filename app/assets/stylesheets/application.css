@@ -40,13 +40,14 @@ margin: 0;
 list-style: none;
 }
 .nav_bar li {
-width: 90px;
+min-width: 50px;
 height: 25px;
 float: left;
 margin: 0 5px;
 }
 .nav_bar li a {
-width: 90px;
+min-width: 50px;
+padding: 0 10px;
 height: 25px;
 text-align: center;
 line-height: 25px;

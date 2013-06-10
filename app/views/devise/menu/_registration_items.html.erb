@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
   <li>
-  <%= link_to(t("users.edit"), edit_user_registration_path) %>
+  <%= link_to("[%s] %s" % [t("helpers.label.user.role_%s" % current_user.role), current_user.username], edit_user_registration_path) %>
   </li>
 <% else %>
   <li>
