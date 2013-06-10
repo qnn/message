@@ -33,6 +33,9 @@ zh-CN:
           name: 名字
           title: 标题
           content: 内容
+          gender: 称谓
+          phone_number: 联系电话
+          qq_number: QQ号码
         user:
           current_password: 当前密码
     errors:
@@ -52,12 +55,25 @@ zh-CN:
             content:
               blank: 不能为空
               too_long: 太长，最长 %{count} 个字符。
+            gender:
+              blank: 需指定一种
+              inclusion: 需指定一种
+            phone_number:
+              blank: 不能为空
+              too_long: 太长，最长 %{count} 个字符。
+            qq_number:
+              too_long: 太长，最长 %{count} 个字符。
+
   helpers:
     label:
       message:
         name: 名字
         title: 标题
         content: 内容
+        gender_mr: 先生
+        gender_ms: 女士
+        phone_number: 联系电话
+        qq_number: QQ号码
       user:
         username: 用户名
         login: 用户名/电邮地址
