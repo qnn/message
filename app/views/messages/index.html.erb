@@ -1,33 +1,31 @@
 <h1><%= t("messages.listing") %></h1>
 
 <table class="msgs">
+  <thead>
+    <tr>
+      <th class="msg_n"><%= t("messages.name") %></th>
+      <th class="msg_t"><%= t("messages.title") %></th>
+      <th class="msg_p"><%= t("messages.phone_number") %></th>
+      <th class="msg_c"><%= t("messages.created_at") %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
 <% @messages.each do |message| %>
-  <tr>
-    <td class="msgs_f"><%= t("messages.title") %></td>
-    <td class="msgs_t"><%= link_to truncate(message.title, :length => 30), message %></td>
-    <td class="msgs_f"><%= t("messages.name") %></td>
-    <td class="msgs_n"><%= truncate message.name, :length => 30 %></td>
-    <td class="msgs_f"><%= t("messages.created_at") %></td>
-    <td class="msgs_d"><%= l message.created_at, :format => :default %></td>
-    <td class="msgs_a">
-      <% if can? :update, message %>
-        <%= link_to t("messages.edit"), edit_message_path(message) %>
-      <% end %>
-      <% if can? :destroy, message %>
-        <%= link_to t("messages.delete"), message, method: :delete, data: { confirm: t("messages.delete_confirm") } %>
-      <% end %>
-    </td>
-  </tr>
-  <% if can? :read, message %>
-  <tr>
-    <td class="msgs_f"><%= t("messages.content") %></td>
-    <td colspan="6">
-      <%= simple_format truncate(message.content, :length => 500, :separator => ' ') %>
-    </td>
-  </tr>
-  <% end %>
-  <tr>
-    <td class="msgs_s" colspan="7"></td>
-  </tr>
+    <tr>
+      <td class="msg_n"><%= truncate message.name, :length => 30 %> <%= t("helpers.label.message.gender_%s" % message.gender) %></td>
+      <td class="msg_t"><%= link_to truncate(message.title, :length => 30), message %></td>
+      <td class="msg_p"><%= message.phone_number %></td>
+      <td class="msg_c"><%= l message.created_at, :format => :default %></td>
+      <td>
+        <% if can? :update, message %>
+          <%= link_to t("messages.edit"), edit_message_path(message) %>
+        <% end %>
+        <% if can? :destroy, message %>
+          <%= link_to t("messages.delete"), message, method: :delete, data: { confirm: t("messages.delete_confirm") } %>
+        <% end %>
+      </td>
+    </tr>
 <% end %>
+  </tbody>
 </table>

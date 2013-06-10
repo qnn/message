@@ -4,29 +4,38 @@
 .msgs {
 
 }
-.msgs_s {
-height: 10px;
-overflow: hidden;
-}
-.msgs_f {
-width: 70px;
-background: #efefef;
-text-align: center;
-font-weight: bold;
-white-space: nowrap;
-}
-.msgs_n {
+th.msg_n {
 width: 100px;
 }
-.msgs_d {
+th.msg_t {
+min-width: 100px;
+}
+th.msg_p {
+width: 130px;
+}
+th.msg_c {
+width: 130px;
+}
+td.msg_n {
+white-space: nowrap;
+width: 100px;
+text-align: center;
+}
+td.msg_t {
+white-space: nowrap;
+min-width: 100px;
+}
+td.msg_p {
+white-space: nowrap;
 width: 130px;
 font-size: 11px;
+text-align: center;
 }
-.msgs_t {
-width: 250px;
-}
-.msgs_a {
+td.msg_c {
 white-space: nowrap;
+width: 130px;
+font-size: 11px;
+text-align: center;
 }
 .required {
 color: #ff0000

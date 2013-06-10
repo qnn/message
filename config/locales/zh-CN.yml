@@ -10,6 +10,7 @@ zh-CN:
     name: 名字
     title: 标题
     content: 内容
+    phone_number: 联系电话
     created_at: 创建时间
     show: 显示
     show_rest: 显示剩余内容
