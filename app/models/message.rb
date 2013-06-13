@@ -9,6 +9,13 @@ class Message < ActiveRecord::Base
   validates :phone_number, :length => { :maximum => 30 }
   validates :gender, :inclusion => { :in => GENDERS }
   belongs_to :user, :foreign_key => "visible_to"
+
+  before_save :validate_visible_to
+
+  private
+  def validate_visible_to
+    self.visible_to = 0 if User.where(["ID = ?", self.visible_to]).empty?
+  end
 end
 
 class String

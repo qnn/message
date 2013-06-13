@@ -26,5 +26,7 @@
 </p>
 
 
+<% if can? :update, @message %>
 <%= link_to t("messages.edit"), edit_message_path(@message) %> |
+<% end %>
 <%= link_to t("messages.back"), messages_path %>

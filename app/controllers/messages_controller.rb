@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all(:order => "created_at DESC")
+    @messages = Message.where("visible_to = 0 OR visible_to = ?", current_user.id).order("created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,8 +15,8 @@ class MessagesController < ApplicationController
   # GET /messages/1
   # GET /messages/1.json
   def show
-    @message = Message.find(params[:id])
-
+    @message = Message.where("id = ? AND (visible_to = 0 OR visible_to = ?)", params[:id], current_user.id).first
+    not_found if @message.nil?
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @message }
