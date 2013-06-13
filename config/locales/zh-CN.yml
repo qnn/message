@@ -29,7 +29,7 @@ zh-CN:
     created: 成功保存信息，感谢你的留言！
     updated: 成功修改留言。
     deleted: 成功删除留言。
-    user_not_defined: 未指定
+    user_not_defined: 所有人可见
   activerecord:
     attributes:
         message:
@@ -66,7 +66,6 @@ zh-CN:
               too_long: 太长，最长 %{count} 个字符。
             qq_number:
               too_long: 太长，最长 %{count} 个字符。
-
   helpers:
     label:
       message:
@@ -77,6 +76,7 @@ zh-CN:
         gender_ms: 女士
         phone_number: 联系电话
         qq_number: QQ号码
+        visible_to: 谁可见？
       user:
         username: 用户名
         login: 用户名/电邮地址

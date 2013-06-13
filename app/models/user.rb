@@ -19,6 +19,10 @@ class User < ActiveRecord::Base
       where(conditions).first
     end
   end
+
+  def as_option
+    "[%s] #{username}" % I18n::t("helpers.label.user.role_#{role}")
+  end
 end
 
 class String

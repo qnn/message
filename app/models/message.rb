@@ -1,6 +1,6 @@
 class Message < ActiveRecord::Base
   GENDERS = %w(mr ms)
-  attr_accessible :content, :name, :title, :gender, :phone_number, :qq_number
+  attr_accessible :content, :name, :title, :gender, :phone_number, :qq_number, :visible_to
   validates_presence_of :name, :title, :content, :gender, :phone_number
   validates :name, :length => { :maximum => 60 }
   validates :title, :length => { :maximum => 200 }
