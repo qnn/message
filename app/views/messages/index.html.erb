@@ -7,6 +7,7 @@
       <th class="msg_t"><%= t("messages.title") %></th>
       <th class="msg_p"><%= t("messages.phone_number") %></th>
       <th class="msg_c"><%= t("messages.created_at") %></th>
+      <th class="msg_c"><%= t("messages.visible_to") %></th>
       <th></th>
     </tr>
   </thead>
@@ -17,6 +18,7 @@
       <td class="msg_t"><%= link_to truncate(message.title, :length => 30), message %></td>
       <td class="msg_p"><%= message.phone_number %></td>
       <td class="msg_c"><%= l message.created_at, :format => :default %></td>
+      <td class="msg_c"><%= message.user.try(:username) || t("messages.user_not_defined") %></td>
       <td>
         <% if can? :update, message %>
           <%= link_to t("messages.edit"), edit_message_path(message) %>

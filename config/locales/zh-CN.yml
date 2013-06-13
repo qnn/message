@@ -12,6 +12,7 @@ zh-CN:
     content: 内容
     phone_number: 联系电话
     created_at: 创建时间
+    visible_to: 谁可见？
     show: 显示
     show_rest: 显示剩余内容
     edit: 编辑
@@ -28,6 +29,7 @@ zh-CN:
     created: 成功保存信息，感谢你的留言！
     updated: 成功修改留言。
     deleted: 成功删除留言。
+    user_not_defined: 未指定
   activerecord:
     attributes:
         message:

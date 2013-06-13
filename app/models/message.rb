@@ -8,6 +8,7 @@ class Message < ActiveRecord::Base
   validates :qq_number, :length => { :maximum => 15 }
   validates :phone_number, :length => { :maximum => 30 }
   validates :gender, :inclusion => { :in => GENDERS }
+  belongs_to :user, :foreign_key => "visible_to"
 end
 
 class String
