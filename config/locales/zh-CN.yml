@@ -11,6 +11,7 @@ zh-CN:
     title: 标题
     content: 内容
     phone_number: 联系电话
+    qq_number: QQ号码
     created_at: 创建时间
     visible_to: 谁可见？
     show: 显示
@@ -22,6 +23,7 @@ zh-CN:
     new_msg: 新增留言
     listing: 留言列表
     edit_msg: 编辑留言
+    details: 留言详情
     delete_confirm: 确认要删除这条留言吗？
     logout_confirm: 确认要退出吗？
     required: 带 <span class="required">*</span> 号的项目为必填项。
