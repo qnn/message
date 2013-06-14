@@ -1,5 +1,8 @@
 zh-CN:
   unauthorized:
+    default: 你所在的用户组无权访问此页。
+    cannot_change_root: root是最高权限，无法改变。
+    cannot_change_role: 你所在的用户组无法设置更高级的用户组。
     manage:
       all: "你所在的用户组无权限执行此操作。"
   time:
@@ -42,6 +45,7 @@ zh-CN:
           phone_number: 联系电话
           qq_number: QQ号码
         user:
+          role: 用户组
           current_password: 当前密码
     errors:
       models:
@@ -49,6 +53,8 @@ zh-CN:
           attributes:
             current_password:
               blank: 不能为空
+            role:
+              inclusion: 需要指定一种
         message:
           attributes:
             name:

@@ -19,7 +19,7 @@
   <%= f.password_field :current_password %></div>
 
   <div><%= f.label :role %>
-  <%= f.collection_select :role, User::ROLES, :to_s, :real_role_name %>
+  <%= f.collection_select :role, @roles, :to_s, :real_role_name %>
   </div>
 
   <div><%= f.submit t("users.update") %></div>
