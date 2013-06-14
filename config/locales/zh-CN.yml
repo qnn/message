@@ -45,12 +45,24 @@ zh-CN:
           phone_number: 联系电话
           qq_number: QQ号码
         user:
+          username: 用户名
           role: 用户组
+          email: 电邮地址
+          password: 密码
           current_password: 当前密码
     errors:
       models:
         user:
           attributes:
+            username:
+              invalid: 可以由英文字母、数字、汉字组成，长度介乎3～15个字符
+            email:
+              blank: 不能为空
+              taken: 已被其他人使用
+            password:
+              blank: 不能为空
+              confirmation: 不符
+              too_short: 太短，最少 6 个字符
             current_password:
               blank: 不能为空
             role:
@@ -94,6 +106,7 @@ zh-CN:
         current_password: 当前密码
         remember_me: 记住登录信息
         role: 用户组
+        role_: 用户组未定义
         role_root: 终极管理员
         role_admin: 管理员
         role_user: 普通用户
