@@ -1,8 +1,8 @@
 Contactus::Application.routes.draw do
   devise_for :users, skip: :registrations
-  devise_scope :user do # prevent users from canceling accounts
+  devise_scope :user do # prevent users from creating and canceling accounts
     resource :registration,
-      only: [:new, :create, :edit, :update],
+      only: [:edit, :update],
       path: 'users',
       path_names: { new: 'sign_up' },
       controller: 'registrations',

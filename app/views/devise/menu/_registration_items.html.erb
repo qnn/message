@@ -5,8 +5,4 @@
   <li>
   <%= link_to("[%s] %s" % [t("helpers.label.user.role_%s" % current_user.role), current_user.username], edit_user_registration_path) %>
   </li>
-<% else %>
-  <li>
-  <%= link_to(t("users.register"), new_user_registration_path)  %>
-  </li>
 <% end %>

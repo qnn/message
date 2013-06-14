@@ -56,6 +56,7 @@ zh-CN:
           attributes:
             username:
               invalid: 可以由英文字母、数字、汉字组成，长度介乎3～15个字符
+              taken: 已被其他人使用
             email:
               blank: 不能为空
               taken: 已被其他人使用
@@ -65,6 +66,7 @@ zh-CN:
               too_short: 太短，最少 6 个字符
             current_password:
               blank: 不能为空
+              invalid: 错误
             role:
               inclusion: 需要指定一种
         message:
