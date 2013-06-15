@@ -3,6 +3,19 @@ class UsersController < ApplicationController
   before_filter :list_of_roles, :only => [:edit, :update]
   before_filter :list_of_roles2, :only => [:new, :create]
 
+  def can_change_root?
+    if current_user.role != User::ROLES[0]
+      # deny viewing page
+      not_found if @user.role == User::ROLES[0]
+      # deny editing
+      not_found if !params.nil? && params.has_key?(:user) && params[:user][:role] == User::ROLES[0]
+    end
+  end
+
+  def is_myself?
+    not_found if @user.id == current_user.id # yourself
+  end
+
   def list_of_roles2
     if User::ROLES.include? current_user.role
       index = User::ROLES.index(current_user.role)
@@ -17,7 +30,11 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all(:order => "created_at ASC")
+    if current_user.role == User::ROLES[0]
+      @users = User.all(:order => "created_at ASC")
+    else
+      @users = User.where("role != ?", User::ROLES[0])
+    end
 
     respond_to do |format|
       format.html
@@ -27,6 +44,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    can_change_root?
+
     respond_to do |format|
       format.html
       format.json { render json: @user }
@@ -35,7 +54,8 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-
+    can_change_root?
+    @user.email = "example@qq.com" if @user.email.blank?
     respond_to do |format|
       format.html
       format.json { render json: @user }
@@ -44,9 +64,10 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
+    can_change_root?
     respond_to do |format|
       if @user.save
-        format.html { redirect_to new_user_url, notice: t("users.created") }
+        format.html { redirect_to users_url, notice: t("users.created") }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -57,10 +78,14 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    is_myself?
+    can_change_root?
   end
 
   def update
     @user = User.find(params[:id])
+    is_myself?
+    can_change_root?
     params[:user].delete :password if params[:user][:password].empty?
     respond_to do |format|
       if @user.update_attributes(params[:user])
@@ -75,6 +100,8 @@ class UsersController < ApplicationController
 
   def destroy
   	@user = User.find(params[:id])
+    is_myself?
+    can_change_root?
     @user.destroy
 
     respond_to do |format|

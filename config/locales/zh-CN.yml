@@ -105,6 +105,8 @@ zh-CN:
         email: 电邮地址
         password: 密码
         password_confirmation: 重输密码
+        new_password: 新密码
+        new_password_confirmation: 重输新密码
         current_password: 当前密码
         remember_me: 记住登录信息
         role: 用户组
@@ -144,3 +146,4 @@ zh-CN:
     leave_blank_if_no_change: （如不需修改密码，请留空）
     for_confirm_usage: （输入当前密码以确认身份）
     none: 无
+    self: 这是你自己

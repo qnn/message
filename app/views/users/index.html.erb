@@ -24,8 +24,12 @@
       <td><%= user.last_sign_in_at.blank? ? t("users.none") : l(user.last_sign_in_at, :format => :default) %></td>
       <td><%= l user.created_at, :format => :default %></td>
       <td>
-        <%= link_to t("users.edit"), edit_user_path(user) %> |
-        <%= link_to t("users.delete"), user, method: :delete, data: { confirm: t("users.delete_confirm") }  %>
+        <% if current_user.id == user.id %>
+          <%= t("users.self") %>
+        <% else %>
+          <%= link_to t("users.edit"), edit_user_path(user) %> | 
+          <%= link_to t("users.delete"), user, method: :delete, data: { confirm: t("users.delete_confirm") }  %>
+        <% end %>
       </td>
     </tr>
 <% end %>
