@@ -10,6 +10,7 @@ Contactus::Application.routes.draw do
         get :cancel
       end
   end
+  resources :users
   resources :messages
   root :to => "messages#new"
 

@@ -1,0 +1,33 @@
+<h1><%= t("users.listing") %></h1>
+
+<table class="users">
+  <thead>
+    <tr>
+      <th><%= t("users.id") %></th>
+      <th><%= t("users.role") %></th>
+      <th><%= t("users.username") %></th>
+      <th><%= t("users.email") %></th>
+      <th><%= t("users.sign_in_count") %></th>
+      <th><%= t("users.last_sign_in_at") %></th>
+      <th><%= t("users.created_at") %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= t "helpers.label.user.role_%s" % user.role %></td>
+      <td><%= user.username %></td>
+      <td><%= user.email %></td>
+      <td><%= user.sign_in_count %></td>
+      <td><%= l user.last_sign_in_at, :format => :default %></td>
+      <td><%= l user.created_at, :format => :default %></td>
+      <td>
+        <%= link_to t("users.edit"), edit_user_path(user) %> |
+        <%= link_to t("users.delete"), user, method: :delete, data: { confirm: t("users.delete_confirm") }  %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>

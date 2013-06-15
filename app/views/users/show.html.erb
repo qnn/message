@@ -1,0 +1,12 @@
+<h1><%= t("users.details") %></h1>
+
+<ul>
+<% if !@user.blank? %>
+  <% @user.attributes.each do |(a,b)| %>
+    <li><strong><%= t("users.%s" % a) %>: </strong><%= b %></li>
+  <% end %>
+<% end %>
+</ul>
+
+<%= link_to t("users.edit"), edit_user_url(@user) %> |
+<%= link_to t("users.back"), users_url %>
