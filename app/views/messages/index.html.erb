@@ -18,7 +18,17 @@
       <td class="msg_t"><%= link_to truncate(message.title, :length => 30), message %></td>
       <td class="msg_p"><%= message.phone_number %></td>
       <td class="msg_c"><%= l message.created_at, :format => :default %></td>
-      <td class="msg_c"><%= message.user.try(:username) || t("messages.user_not_defined") %></td>
+      <td class="msg_c">
+        <% if !message.user.blank? %>
+          <% if message.user.username == current_user.username %>
+            <%= t("messages.self") %>
+          <% else %>
+            <%= message.user.username %>
+          <% end %>
+        <% else %>
+          <%= t("messages.user_not_defined") %>
+        <% end %>
+      </td>
       <td>
         <% if can? :update, message %>
           <%= link_to t("messages.edit"), edit_message_path(message) %>

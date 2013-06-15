@@ -5,7 +5,9 @@
   <li>
   <%= link_to("[%s] %s" % [t("helpers.label.user.role_%s" % current_user.role), current_user.username], edit_user_registration_path) %>
   </li>
+  <% if User::ROLES.first(User::AdminThreshold).include? current_user.role %>
   <li>
   <%= link_to t("users.listing"), users_path %>
   </li>
+  <% end %>
 <% end %>

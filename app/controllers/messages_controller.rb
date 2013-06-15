@@ -4,7 +4,11 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.where("visible_to = 0 OR visible_to = ?", current_user.id).order("created_at DESC")
+    if User::ROLES.first(User::AdminThreshold).include? current_user.role
+      @messages = Message.all
+    else
+      @messages = Message.where("visible_to = 0 OR visible_to = ?", current_user.id).order("created_at DESC")
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,7 +19,11 @@ class MessagesController < ApplicationController
   # GET /messages/1
   # GET /messages/1.json
   def show
-    @message = Message.where("id = ? AND (visible_to = 0 OR visible_to = ?)", params[:id], current_user.id).first
+    if User::ROLES.first(User::AdminThreshold).include? current_user.role
+      @message = Message.find(params[:id])
+    else
+      @message = Message.where("id = ? AND (visible_to = 0 OR visible_to = ?)", params[:id], current_user.id).first
+    end
     not_found if @message.nil?
     respond_to do |format|
       format.html # show.html.erb

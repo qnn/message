@@ -35,6 +35,7 @@ zh-CN:
     updated: 成功修改留言。
     deleted: 成功删除留言。
     user_not_defined: 所有人可见
+    self: 我
   activerecord:
     attributes:
         message:

@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   ROLES = %w(root admin user)
+  AdminThreshold = 2 # nth item in ROLES
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable

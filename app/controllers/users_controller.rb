@@ -2,6 +2,11 @@ class UsersController < ApplicationController
 
   before_filter :list_of_roles, :only => [:edit, :update]
   before_filter :list_of_roles2, :only => [:new, :create]
+  before_filter :check_role
+
+  def check_role
+    not_found if !User::ROLES.first(User::AdminThreshold).include? current_user.role
+  end
 
   def can_change_root?
     if current_user.role != User::ROLES[0]
