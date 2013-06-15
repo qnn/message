@@ -2,7 +2,7 @@
 
 <ul>
 <% if !@user.blank? %>
-  <% @user.attributes.each do |(a,b)| %>
+  <% @user.attributes.delete_if {|attr| attr == "encrypted_password" }.each do |(a,b)| %>
     <li><strong><%= t("users.%s" % a) %>: </strong><%= b %></li>
   <% end %>
 <% end %>
