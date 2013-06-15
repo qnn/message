@@ -136,8 +136,11 @@ zh-CN:
     login: 登录
     update: 保存更改
     updated: 用户信息已更新
+    create: 创建新的用户
+    created: 用户已创建
     cancel: 删除账户
     cancel_confirm: 确认要删除这个账户吗？
     back: 返回
     leave_blank_if_no_change: （如不需修改密码，请留空）
     for_confirm_usage: （输入当前密码以确认身份）
+    none: 无
