@@ -1,4 +1,4 @@
-APP_PATH = "/srv/message"
+APP_PATH = "/srv/qnn/message"
 # Sample verbose configuration file for Unicorn (not Rack)
 #
 # This configuration file documents many features of Unicorn

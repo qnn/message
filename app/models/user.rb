@@ -1,3 +1,4 @@
+# encoding: utf-8
 class User < ActiveRecord::Base
   ROLES = %w(root admin user)
   AdminThreshold = 2 # nth item in ROLES
