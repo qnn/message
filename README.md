@@ -1,6 +1,12 @@
 Simple Message System
 =====================
 
+Please note that this repository is not being actively maintained.
+
+![message](https://f.cloud.github.com/assets/1284703/2059827/fb5c504a-8bd8-11e3-953d-aa4c0395055e.png)
+
+---
+
 NGINX config:
 
     upstream app_server {
